@@ -1,5 +1,8 @@
 def print_header():
-    pass
+    print('------------------------------')
+    print('        BIRTHDAY APP')
+    print('------------------------------')
+    print()
 
 
 def get_birthday_from_user():
