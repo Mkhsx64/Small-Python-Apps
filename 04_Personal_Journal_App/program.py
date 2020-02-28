@@ -16,7 +16,5 @@ def run_event_loop():
     
     cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')
     
-    
-
 
 main()
