@@ -13,10 +13,9 @@ while guess != the_number:
     guess = int(guess_text)
     
     if guess < the_number:
-        print('too low')
+        print('Your guess of {} was too LOW'.format(guess))
     elif guess > the_number:
-        print('too high')
+        print('Your guess of {} was too HIGH'.format(guess))
     else:
-        print('you win!')
+        print('you win with the guess of {}!'.format(guess))
 
-print('done')
