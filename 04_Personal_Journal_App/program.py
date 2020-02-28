@@ -1,4 +1,9 @@
 
+def main():
+    print_header()
+    run_event_loop()
+
+
 def print_header():
     print('------------------------------')
     print('        JOURNAL APP')
@@ -7,11 +12,11 @@ def print_header():
 
 
 def run_event_loop():
-    pass
+    print('What do you want to do with your journal?')
+    
+    cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')
+    
+    
 
 
-def main():
-    print_header()
-    run_event_loop()
-
-
+main()
