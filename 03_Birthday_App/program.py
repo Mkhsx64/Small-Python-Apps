@@ -1,3 +1,6 @@
+import datetime
+
+
 def print_header():
     print('------------------------------')
     print('        BIRTHDAY APP')
@@ -6,7 +9,13 @@ def print_header():
 
 
 def get_birthday_from_user():
-    pass
+    print('When were you born" ')
+    year = int(input('Year [YYYY]: '))
+    month = int(input('Month [MM]: '))
+    day = int(input('Day [DD]: '))
+    
+    bday = datetime.date(year, month, day)
+    return bday
 
 
 def compute_days_between_dates():
@@ -24,3 +33,4 @@ def main():
     print_birthday_information(number_of_days)
 
 
+main()
