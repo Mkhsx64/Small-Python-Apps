@@ -18,9 +18,9 @@ def run_event_loop():
     while cmd != 'x':
         cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')
         cmd = cmd.lower().strip()    
-        if cmd == 'L':
+        if cmd == 'l':
             print("L")
-        elif cmd == 'A':
+        elif cmd == 'a':
             print("A")
         elif cmd != 'x':
             print("Sorry, we don't understand '{}'".format(cmd))
