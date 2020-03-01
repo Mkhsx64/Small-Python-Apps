@@ -13,8 +13,6 @@ def save(name, journal_data):
     with open(filename, 'w') as fout:
         for entry in journal_data:
             fout.write(entry + '\n')
-    
-    fout.close()
 
 
 def add_entry(text, journal_data):
