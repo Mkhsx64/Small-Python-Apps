@@ -7,7 +7,7 @@ def load(name):
 
 
 def save(name, journal_data):
-    filename = os.path.abspath(os.path.join('.', 'journals', name + '.jrl'))
+    filename = get_full_pathname(name)
     print('... saving to: {}'.format(filename))
 
     with open(filename, 'w') as fout:
@@ -18,3 +18,7 @@ def save(name, journal_data):
 def add_entry(text, journal_data):
     journal_data.append(text)
 
+
+def get_full_pathname(name):
+    filename = os.path.abspath(os.path.join('.', 'journals', name + '.jrl'))
+    return filename
