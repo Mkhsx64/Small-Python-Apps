@@ -8,7 +8,7 @@ def load(name):
         with open(filename) as fin:
             for entry in fin.readlines():
                 data.append(entry.rstrip())
-    return []
+    return data
 
 
 def save(name, journal_data):
