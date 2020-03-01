@@ -1,4 +1,7 @@
 
+import journal
+
+
 def main():
     print_header()
     run_event_loop()
@@ -14,7 +17,7 @@ def print_header():
 def run_event_loop():
     print('What do you want to do with your journal?')
     cmd = None
-    journal_data = []
+    journal_data = journal.load()
     
     while cmd != 'x':
         cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')
