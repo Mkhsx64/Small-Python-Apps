@@ -3,6 +3,12 @@ import os
 
 def load(name):
     # todo: populate from file if it exists.
+    data = []
+    filename = get_full_pathname(name)
+    if os.path.exists(filename):
+        with open(filename) as fin:
+            for entry in fin.readlines():
+                data.append(entry.rstrip())
     return []
 
 
