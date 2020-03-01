@@ -18,7 +18,7 @@ def run_event_loop():
     print('What do you want to do with your journal?')
     cmd = None
     journal_name = 'default'
-    journal_data = journal.load()
+    journal_data = journal.load(journal_name)
     
     while cmd != 'x':
         cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')

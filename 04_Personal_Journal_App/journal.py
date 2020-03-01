@@ -1,12 +1,16 @@
+import os
+
 
 def load(name):
     return []
 
 
 def save(name, journal_data):
-    pass
+    filename = os.path.abspath(os.path.join('./journals', name + '.jrl'))
+    print('would load from here {}'.format(filename))
+    #fout = open(filename, 'w')
 
 
 def add_entry(text, journal_data):
-    pass
+    journal_data.append(text)
 
