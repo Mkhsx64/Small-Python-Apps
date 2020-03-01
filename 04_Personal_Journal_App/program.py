@@ -17,6 +17,7 @@ def print_header():
 def run_event_loop():
     print('What do you want to do with your journal?')
     cmd = None
+    journal_name = 'default'
     journal_data = journal.load()
     
     while cmd != 'x':
@@ -30,6 +31,7 @@ def run_event_loop():
             print("Sorry, we don't understand '{}'".format(cmd))
     
     print('Done, goodbye.')
+    journal.save(journal_name, journal_data)
 
 
 def list_entries(data):
