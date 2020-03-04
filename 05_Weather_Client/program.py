@@ -1,7 +1,9 @@
 
 def main():
     print_header()
-    zipcode()
+    # get the users zipcode
+    code = input('What zipcode do you want the weather for (97201)? ')
+    
     get_html()
     parse_html()
     display()
@@ -16,10 +18,6 @@ def parse_html():
 
 
 def get_html():
-    pass
-
-
-def zipcode():
     pass
 
 
