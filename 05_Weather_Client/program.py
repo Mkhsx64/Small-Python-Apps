@@ -1,10 +1,29 @@
 
 def main():
-    #print the header
-    #get zipcode from user
-    #get html from the web
-    #parse the html
-    #display the forecast
+    print_header()
+    zipcode()
+    get_html()
+    parse_html()
+    display()
+
+
+def display():
+    pass
+
+
+def parse_html():
+    pass
+
+
+def get_html():
+    pass
+
+
+def zipcode():
+    pass
+
+
+def print_header():
     pass
 
 
