@@ -1,4 +1,3 @@
-from distutils.util import change_root
 import numpy as np
 
 #checking out numpy functions
@@ -10,6 +9,6 @@ def curve(grades):
     average = grades.mean()
     change = CURVE_CENTER - average
     new_grades = grades + change
-    return np.click(new_grades, grades, 100)
+    return print(np.clip(new_grades, grades, 100))
 
 curve(grades)
