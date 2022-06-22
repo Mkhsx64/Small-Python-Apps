@@ -13,7 +13,7 @@ weights_1 = np.array([1.45, -0.66])
 bias = np.array([0.0])
 
 def sigmoid(x):
-    return 1/ (1 + np.exp(-x))
+    return 1 / (1 + np.exp(-x))
 
 def make_prediction(input_vector, weights, bias):
     layer_1 = np.dot(input_vector, weights) + bias
