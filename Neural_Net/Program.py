@@ -23,3 +23,10 @@ def make_prediction(input_vector, weights, bias):
 prediction = make_prediction(input_vector, weights_1, bias)
 
 print(f"The prediction result is: {prediction}")
+
+#Using a cost function to measure the error; MSE (mean squared error)
+target = 0
+#Compute difference between the prediction and the target; multiply the result by itself
+mse = np.square(prediction - target)
+
+print(f"Prediction: {prediction}; Error: {mse}")
