@@ -36,3 +36,9 @@ class NeuralNetwork:
         )
 
         return derror_dbias, derror_dweights
+    
+    def _update_parameters(self, derror_dbias, derror_dweights):
+        self.bias = self.bias - (derror_dbias * self.learning_rate)
+        self.weights = self.weights - (
+            derror_dweights * self.learning_rate
+        )
