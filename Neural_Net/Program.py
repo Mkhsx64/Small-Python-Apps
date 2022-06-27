@@ -13,8 +13,7 @@ input_vector = np.array([1.66, 1.56])
 weights_1 = np.array([1.45, -0.66])
 bias = np.array([0.0])
 
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+
 
 def make_prediction(input_vector, weights, bias):
     layer_1 = np.dot(input_vector, weights) + bias
@@ -48,8 +47,7 @@ print(f"Prediction: {prediction}; Error: {error}")
 
 #Applying the chain rule and using backpropagation
 
-def sigmoid_deriv(x):
-    return sigmoid(x) * (1-sigmoid(x))
+
 
 derror_dprediction = 2 * (prediction - target)
 layer_1 = np.dot(input_vector, weights_1) + bias
