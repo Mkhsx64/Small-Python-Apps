@@ -18,7 +18,7 @@ class NeuralNetwork:
         return 1 / (1 + np.exp(-x))
     
     def _sigmoid_deriv(self, x):
-        return self.sigmoid(x) * (1 - self._sigmoid(x))
+        return self._sigmoid(x) * (1 - self._sigmoid(x))
     
     #Prediction method
     def predict(self, input_vector):
