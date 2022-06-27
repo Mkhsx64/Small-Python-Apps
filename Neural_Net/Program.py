@@ -1,4 +1,5 @@
 import numpy as np
+from NeuralNetwork import NeuralNetwork
 
 #Simple Neural Net Project
 
