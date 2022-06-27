@@ -11,3 +11,11 @@ class NeuralNetwork:
     
     def _sigmoid_deriv(self, x):
         return self.sigmoid(x) * (1 - self._sigmoid(x))
+    
+    def predict(self, input_vector):
+        layer_1 = np.dot(input_vector, self.weights) + self.bias
+        layer_2 = self._sigmoid(layer_1)
+        prediction = layer_2
+        return prediction
+
+    
