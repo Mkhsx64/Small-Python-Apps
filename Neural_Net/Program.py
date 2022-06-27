@@ -30,3 +30,8 @@ target = 0
 mse = np.square(prediction - target)
 
 print(f"Prediction: {prediction}; Error: {mse}")
+
+#To know which direction to reduce the error, going to use derivative
+derivative = 2 * (prediction - target)
+
+print(f"The derivative is {derivative}")
