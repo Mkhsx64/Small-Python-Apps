@@ -1,5 +1,13 @@
 import numpy as np
 
+
+#going to use sigmoid activation function with 2 layers
+#0 to 1; >.5 -> 1; >.5 -> 0
+#input----\
+#          ---> (Layer 1) -> dot_product -> dot_product_result ------> sum -> layer_1_result -> layer 2 -> sigmoid -> prediction 
+#weights--/                                                    bias-/
+
+
 class NeuralNetwork:
     def __init__(self, learning_rate):
         self.weights = np.array([np.random.randn(), np.random.randn()])
@@ -12,12 +20,14 @@ class NeuralNetwork:
     def _sigmoid_deriv(self, x):
         return self.sigmoid(x) * (1 - self._sigmoid(x))
     
+    #Prediction method
     def predict(self, input_vector):
         layer_1 = np.dot(input_vector, self.weights) + self.bias
         layer_2 = self._sigmoid(layer_1)
         prediction = layer_2
         return prediction
-
+    
+    #Chain rule adjusting the parameters with Backpropagation
     def _compute_gradients(self, input_vector, target):
         layer_1 = np.dot(input_vector, self.weights) + self.bias
         layer_2 = self._sigmoid(layer_1)
@@ -43,4 +53,36 @@ class NeuralNetwork:
             derror_dweights * self.learning_rate
         )
     
-    
+    #Creating a train method using Stochastic gradient descent
+    def train(self, input_vectors, targets, iterations):
+        cumulative_errors = []
+        for current_iteration in range(iterations):
+            #Pick a data instance at random
+            random_data_index = np.random.randint(len(input_vectors))
+
+            input_vector = input_vectors[random_data_index]
+            target = targets[random_data_index]
+
+            #Compute the gradients and update the weights
+            derror_dbias, derror_dweights = self._compute_gradients(
+                input_vector, target
+            )
+
+            self._update_parameters(derror_dbias, derror_dweights)
+
+            #Measure the cumulative error for all the instances
+            if current_iteration % 100 == 0:
+                cumulative_error = 0
+                #Loop through all the instances to measure the error
+                for data_instance_index in range(len(input_vectors)):
+                    data_point = input_vectors[data_instance_index]
+                    target = targets[data_instance_index]
+
+                    prediction = self.predict(data_point)
+                    error = np.square(prediction - target)
+
+                    cumulative_error = cumulative_error + error
+                cumulative_errors.append(cumulative_error)
+
+        return cumulative_errors
+
