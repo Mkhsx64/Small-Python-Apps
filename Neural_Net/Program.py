@@ -35,3 +35,12 @@ print(f"Prediction: {prediction}; Error: {mse}")
 derivative = 2 * (prediction - target)
 
 print(f"The derivative is {derivative}")
+
+#updating the weights
+weights_1 = weights_1 - derivative
+
+prediction = make_prediction(input_vector, weights_1, bias)
+
+error = (prediction - target) ** 2
+
+print(f"Prediction: {prediction}; Error: {error}")
