@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from NeuralNetwork import NeuralNetwork
 
 #Simple Neural Net Project
+#Created by Jon Becher w/ help from Realpython online resources
 
 input_vectors = np.array(
     [
