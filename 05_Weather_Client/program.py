@@ -1,14 +1,17 @@
+import collections
+
+Location = collections.namedtuple('Location', 'city state country')
 
 def main():
     print_header()
-    
+
     # get the location from the user
     locationText = input('Where do you want the weather report (e.g. Portland, US)? ')
     print(f"You selected {locationText}")
 
     # convert plaintext over to data we can use
-    city, state, country = convertPlaintextLocation(locationText)
-    print(f"City={city}, State={state}, Country={country}")
+    loc = convertPlaintextLocation(locationText)
+    print(loc)
     
     get_html()
     parse_html()
@@ -19,7 +22,7 @@ def convertPlaintextLocation(plaintText):
     if not plaintText or not plaintText.strip():
         return None
     
-    parts = plaintText.split(',')
+    parts = plaintText.lower().split(',')
     parts = [x.strip(' ') for x in parts]
 
     # Need to set up logic for which value coincides to data we need to pass to the API
@@ -38,7 +41,7 @@ def convertPlaintextLocation(plaintText):
     else:
         return None
     
-    return city, state, country
+    return Location(city, state, country)
 
 def display():
     pass
