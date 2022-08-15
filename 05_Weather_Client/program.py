@@ -12,10 +12,6 @@ def main():
     # convert plaintext over to data we can use
     loc = convertPlaintextLocation(locationText)
     print(loc)
-    
-    get_html()
-    parse_html()
-    display()
 
 def convertPlaintextLocation(plaintText):
     # if no input return None
@@ -42,17 +38,6 @@ def convertPlaintextLocation(plaintText):
         return None
     
     return Location(city, state, country)
-
-def display():
-    pass
-
-
-def parse_html():
-    pass
-
-
-def get_html():
-    pass
 
 
 def print_header():
