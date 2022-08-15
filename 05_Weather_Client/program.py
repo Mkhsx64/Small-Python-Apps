@@ -1,8 +1,9 @@
 
 def main():
     print_header()
-    # get the users zipcode
-    code = input('What zipcode do you want the weather for (97201)? ')
+    # get the location from the user
+    locationText = input('Where do you want the weather report (e.g. Portland, US)? ')
+    print(f"You selected {locationText}")
     
     get_html()
     parse_html()
@@ -25,7 +26,7 @@ def print_header():
     pass
 
 
-if __name__ == '__main':
+if __name__ == '__main__':
     main()
 
 
