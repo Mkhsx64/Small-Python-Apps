@@ -1,13 +1,14 @@
 
 def main():
     print_header()
+    
     # get the location from the user
     locationText = input('Where do you want the weather report (e.g. Portland, US)? ')
     print(f"You selected {locationText}")
 
     # convert plaintext over to data we can use
-    location = convertPlaintextLocation(locationText)
-    print(f"Location = {location}")
+    city, state, country = convertPlaintextLocation(locationText)
+    print(f"City={city}, State={state}, Country={country}")
     
     get_html()
     parse_html()
@@ -21,7 +22,23 @@ def convertPlaintextLocation(plaintText):
     parts = plaintText.split(',')
     parts = [x.strip(' ') for x in parts]
 
-    return parts
+    # Need to set up logic for which value coincides to data we need to pass to the API
+    city = ''
+    state = ''
+    country = 'us'
+    if len(parts) == 1:
+        city = parts[0]
+    elif len(parts) == 2:
+        city = parts[0]
+        state = parts[1]
+    elif len(parts) == 3:
+        city = parts[0]
+        state = parts[1]
+        country = parts[2]
+    else:
+        return None
+    
+    return city, state, country
 
 def display():
     pass
