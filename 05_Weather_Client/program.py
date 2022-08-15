@@ -14,7 +14,14 @@ def main():
     display()
 
 def convertPlaintextLocation(plaintText):
-    pass
+    # if no input return None
+    if not plaintText or not plaintText.strip():
+        return None
+    
+    parts = plaintText.split(',')
+    parts = [x.strip(' ') for x in parts]
+
+    return parts
 
 def display():
     pass
