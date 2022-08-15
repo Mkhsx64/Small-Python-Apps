@@ -23,7 +23,9 @@ def get_html():
 
 
 def print_header():
-    pass
+    print('--------------------------------')
+    print('         WEATHER CLIENT         ')
+    print('--------------------------------')
 
 
 if __name__ == '__main__':
