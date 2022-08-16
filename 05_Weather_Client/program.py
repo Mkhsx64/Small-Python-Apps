@@ -17,10 +17,19 @@ def main():
     # get report from the API
     key = '6215b88044902e8f262cd476407e0a26'
     data = callWeatherAPI(loc, key)
-    termData = getWeatherReport(loc, data)
-    print(termData)
+    weather = getWeatherReport(loc, data)
 
-    
+    # report the weather
+    locationName = getLocationName(loc)
+    scale = "Fahrenheit"
+
+    print(f'The weather in {locationName} is {weather.temp} in {scale} and {weather.condition}')
+
+def getLocationName(location):
+    if not location.state:
+        return f'{location.city.capitalize()}, {location.country.upper()}'
+    else:
+        return f'{location.city.capitalize()}, {location.state.upper()}, {location.country.upper()}'
 
 def callWeatherAPI(location, APIkey):
     url = f'https://api.openweathermap.org/data/2.5/weather?q={location.city},{location.country}&units=imperial&appid={APIkey}'
