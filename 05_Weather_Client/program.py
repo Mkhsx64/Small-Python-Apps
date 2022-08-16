@@ -1,5 +1,6 @@
 import collections
 
+
 Location = collections.namedtuple('Location', 'city state country')
 
 def main():
