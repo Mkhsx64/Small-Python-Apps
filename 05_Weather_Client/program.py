@@ -2,6 +2,7 @@ import collections
 import requests
 
 Location = collections.namedtuple('Location', 'city state country')
+Weather = collections.namedtuple('Weather', 'location units temp condition')
 
 def main():
     print_header()
@@ -16,7 +17,9 @@ def main():
     # get report from the API
     key = '6215b88044902e8f262cd476407e0a26'
     data = callWeatherAPI(loc, key)
-    print(data)
+    termData = getWeatherReport(loc, data)
+    print(termData)
+
     
 
 def callWeatherAPI(location, APIkey):
@@ -30,6 +33,15 @@ def callWeatherAPI(location, APIkey):
     data = resp.json()
 
     return data
+
+def getWeatherReport(location, data):
+    # get values we want from the json data
+    description = data.get('weather')
+    temp = data.get('main')
+
+    weather = Weather(location, 'imperial', temp, description)
+
+    return weather
 
 def convertPlaintextLocation(plaintText):
     # if no input return None
