@@ -3,4 +3,6 @@
 
 /05_Weather_Client/venv
 
-/Neural_Net
+/Neural_Net/__pycache__
+/Neural_Net/NeuralNetwork.py
+/Neural_Net/Program.py
